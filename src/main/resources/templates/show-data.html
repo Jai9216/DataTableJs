@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataTables Example</title>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+</head>
+<body>
+
+<table id="userTable" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Field
+        </tr>
+    </thead>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script> -->
+<script>
+    $(document).ready(function() {
+        $('#userTable').DataTable({
+            "ajax": {
+                "url": "/data",
+                "dataSrc": ""
+            },
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "field" }
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>
